@@ -1,0 +1,6 @@
+{
+    "window.menuBarVisibility": "hidden",
+    "window.enableMenuBarMnemonics": true,
+    "todo-tree.tree.disableCompactFolders": false,
+    "todo-tree.tree.showBadges": false
+}
