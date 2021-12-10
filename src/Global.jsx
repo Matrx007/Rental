@@ -10,6 +10,10 @@ export const useUser = userStore.getHook();
 const initializingStore = new GlobalStore(true);
 export const useInitializing = initializingStore.getHook();
 
+// loading
+const loadingStore = new GlobalStore(0);
+export const useLoading = loadingStore.getHook();
+
 // language
 export const LANG_EN = require('./lang/en/map.json');
 export const LANG_ET = require('./lang/et/map.json');
@@ -23,7 +27,8 @@ export default {
     // Firebase authentication
     useUser: userStore.getHook(),
     useInitializing: initializingStore.getHook(),
-
+    useLoading: loadingStore.getHook(),
+    
     // Localization
     LANG_EN: LANG_EN,
     LANG_ET: LANG_ET, 

@@ -23,6 +23,8 @@ import SignUp from './screens/SignUp.jsx';
 import HomeFeed from './screens/HomeFeed.jsx';
 import Property from './screens/PropertyNew.jsx';
 import NewListing from './screens/NewListing.jsx';
+import Profile from './screens/Profile.jsx';
+import Loading from './screens/Loading.jsx';
 
 import firestore from '@react-native-firebase/firestore';
 import auth from '@react-native-firebase/auth';
@@ -33,6 +35,7 @@ const App = () => {
   const [ initializing, setInitializing ] = useState(true);
   const [ user, setUser ] = Global.useUser();
   const [ lang, setLang ] = Global.useLang();
+  const [ loading, setLoading ] = Global.useLoading();
 
   // Handle user state changes
   function onAuthStateChanged(user) {
@@ -53,6 +56,8 @@ const App = () => {
   
   console.log('App(): ', user);
   
+  if(loading) return Loading();
+  
   return (
     <NavigationContainer>
         <StatusBar translucent backgroundColor="transparent" />
@@ -63,6 +68,7 @@ const App = () => {
               <Stack.Screen name="Property" component={Property} options={{headerShown: false, title: lang.property.header}} />
               <Stack.Screen name="Properties" component={Properties} options={{headerShown: false, title: lang.properties.header}} />
               <Stack.Screen name="New Listing" component={NewListing} options={{headerShown: false, title: lang.homeFeed.header}} />
+              <Stack.Screen name="Profile" component={Profile} options={{headerShown: false, title: 'Profile'}} />
               {/* <Stack.Screen name="Property" component={Property} options={{headerShown: false, title: 'Property'}} /> */}
             </>
           ) : (

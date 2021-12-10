@@ -11,8 +11,10 @@ import { useState } from 'react';
 
 import Styles from '../Styles.jsx';
 import Global from '../Global.jsx';
+import * as Firebase from '../Firebase.js';
 
 import SimpleButton from '../components/SimpleButton.jsx';
+
 
 // This is a navigators's screen
 const LogIn = ({ navigation }) => {
@@ -20,6 +22,7 @@ const LogIn = ({ navigation }) => {
   const [loginEmail, setLoginEmail] = useState('');
   const [user, setUser] = Global.useUser();
   const [lang, setLang] = Global.useLang();
+  const [loading, setLoading] = Global.useLoading();
   
   function logIn() {
     // TODO: firebase.login(callback: navigation.replace(..))
@@ -28,9 +31,8 @@ const LogIn = ({ navigation }) => {
   
   function skipLogIn() {
     // TODO: firebase.asAnonymous(callback: navigation.replace(..))
-    console.log(user);
-    setUser(true);
-    console.log(user);
+    setLoading(true);  
+    Firebase.skipLogIn(() => setLoading(false));
   }
   
   const rootViewStyle = {
