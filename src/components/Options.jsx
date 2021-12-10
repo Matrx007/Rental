@@ -54,20 +54,18 @@ export default class Options extends React.Component {
             const selectedStyle = {
                 width: this.props.width,
                 height: this.props.height,
-                color: '#000',
+                color: '#9900ef',
                 fontSize: 18,
                 fontWeight: '500',
                 textAlign: 'center',
                 textAlignVertical: 'center',
-                backgroundColor: '#e8e8e8',
+                backgroundColor: '#e8e8e880',
             };
 
             const select = () => {
-                console.log("works");
                 this.setState({selectedID: option.id})
             };
 
-            console.log("seelcted:", this.state.selectedID);
             return (
                 <TouchableOpacity onPress={select} key={option.id}>
                     <Text style={selectedID == option.id ? selectedStyle : style}>{option.label}</Text>

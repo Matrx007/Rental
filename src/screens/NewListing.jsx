@@ -32,9 +32,11 @@ export default ({ navigation }) => {
 
     return (
         <ImageBackground style={[ Styles.Styles.fillScreen ]} imageStyle={{ height: 256 }} resizeMode="cover" source={References.graphics.wavesTop}>
+            <Image style={{ position: 'absolute', bottom: 0, height: 256, width: '100%' }} resizeMode="cover" source={References.graphics.wavesBottom}/>
             <Text style={[ Styles.Styles.pageTitle, { position: 'absolute', top: 32, left: 32, fontSize: 36, color: 'white', fontWeight: '900'} ]}>New listing</Text>
             
             <ScrollView 
+                overScrollMode={'always'}
                 horizontal 
                 style={{width: Dimensions.get('window').width}} 
                 pagingEnabled={true}

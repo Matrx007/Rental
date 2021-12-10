@@ -14,10 +14,11 @@ export default class SimpleButton extends React.Component {
     super(props);
   }
 
-  render() { 
+  render() {
+    let theme = this.props.theme ? this.props.theme : Styles.Themes.buttonTheme;
     return (
-      <TouchableOpacity style={[ Styles.Styles.button, this.props.style ]} onPress={this.props.onPress}> 
-        <Text style={ Styles.Styles.buttonText }>{this.props.title}</Text>
+      <TouchableOpacity style={[ theme.box, this.props.style ]} onPress={this.props.onPress}> 
+        <Text style={ theme.text }>{this.props.title}</Text>
       </TouchableOpacity> 
     );
   }

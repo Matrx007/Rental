@@ -125,6 +125,7 @@ export default ({ navigation }) => {
 
                     <Text style={ Styles.Styles.pageTitle }>{lang.homeFeed.searchHistory}</Text>
                     <FlatList
+                        removeClippedSubviews
                         showsHorizontalScrollIndicator={false}
                         style={{marginVertical: 16, overflow: 'visible'}}
                         horizontal

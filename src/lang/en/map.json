@@ -98,7 +98,7 @@
     "featureValues": {
         "apartment": "Apartment",
         "house": "House",
-        "shared": "Shared",
+        "shared": "Part of house",
         "wood": "Wood house",
         "log": "Log house",
         "panel": "Panel house",

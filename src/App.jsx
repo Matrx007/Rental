@@ -11,7 +11,6 @@ import {
   Text,
   StatusBar
 } from 'react-native';
-import type {Node} from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -39,11 +38,11 @@ const App = () => {
         <StatusBar translucent backgroundColor="transparent" />
         <Stack.Navigator initialRouteName="Sign up">
           { user ? (
-            <>
-              <Stack.Screen name="New Listing" component={NewListing} options={{headerShown: false, title: lang.homeFeed.header}} />
+            <> 
               <Stack.Screen name="Home Feed" component={HomeFeed} options={{headerShown: false, title: lang.homeFeed.header}} />
               <Stack.Screen name="Property" component={Property} options={{headerShown: false, title: lang.property.header}} />
               <Stack.Screen name="Properties" component={Properties} options={{headerShown: false, title: lang.properties.header}} />
+              <Stack.Screen name="New Listing" component={NewListing} options={{headerShown: false, title: lang.homeFeed.header}} />
               {/* <Stack.Screen name="Property" component={Property} options={{headerShown: false, title: 'Property'}} /> */}
             </>
           ) : (

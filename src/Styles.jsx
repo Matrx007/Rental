@@ -12,36 +12,61 @@ const colors = {
   baseColor: '#fff'
 };
 
+const themes = {
+  buttonTheme: {
+    // Used in components/SimpleButton.jsx
+    box: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingVertical: 12,
+      paddingHorizontal: 24,
+      borderRadius: 4,
+      backgroundColor: '#9900ef',
+      
+      shadowColor: "#000",
+      shadowOffset: {
+        width: 0,
+        height: 2,
+      },
+      shadowOpacity: 0.25,
+      shadowRadius: 3.84,
+
+      elevation: 5,
+    },
+
+    // Used in components/SimpleButton.jsx
+    text: {
+      fontSize: 16,
+      fontWeight: '500',
+      letterSpacing: 1.25,
+      color: '#fff'
+    } 
+  },
+  buttonLightTheme: {
+    // Used in components/SimpleButton.jsx
+    box: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingVertical: 12,
+      paddingHorizontal: 24,
+      borderRadius: 4,
+      backgroundColor: '#F4E3FD',
+      // backgroundColor: '#9900ef',
+    },
+    
+    // Used in components/SimpleButton.jsx
+    text: {
+      fontSize: 16,
+      fontWeight: '500',
+      letterSpacing: 1.25,
+      // color: '#fff'
+      color: '#9900ef',
+    } 
+  }
+};
+
 // ed6607
 const styles = {
-
-  // Used in components/SimpleButton.jsx
-  button: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical: 8,
-    paddingHorizontal: 24,
-    borderRadius: 4,
-    backgroundColor: '#e82e5d',
-    
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-
-    elevation: 5,
-  },
-
-  // Used in components/SimpleButton.jsx
-  buttonText: {
-    fontSize: 14,
-    fontWeight: '500',
-    letterSpacing: 1.25,
-    color: '#fff'
-  },
   
   // Used to divide screen into 3 equal vertical 
   // blocks, in which elements are centered
@@ -151,6 +176,7 @@ const styles = {
 
 export default {
   Styles: styles,
+  Themes: themes,
   Constants: constants,
   Colors: colors
 };

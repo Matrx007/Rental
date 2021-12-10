@@ -21,6 +21,7 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import Styles from '../Styles.jsx';
 import References from '../References.jsx';
 import Global from '../Global.jsx';
+import SimpleButton from '../components/SimpleButton.jsx';
 
 const InfoComponent = ({route}) => {
     const [lang, setLang] = Global.useLang();
@@ -68,9 +69,7 @@ const InfoComponent = ({route}) => {
                     <Feature __lang={lang} type={"Vannitube"} value={route.params.bathrooms} style={styles.infoLine} />
                 </View>
                 
-                <View style={{paddingBottom: 16, borderBottomColor: '#eee', borderBottomWidth: 1, marginBottom: 16}}>
-                    <Text style={ Styles.Styles.navigationLink }>{lang.property.browsePhotos}</Text>
-                </View>
+                <SimpleButton theme={Styles.Themes.buttonLightTheme} title={lang.property.browsePhotos}/>
             </View>
         </ScrollView>
     );

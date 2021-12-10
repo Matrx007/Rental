@@ -10,6 +10,8 @@ export default {
     },
     graphics: {
         wavesTop: require('../assets/wavesTop.png'),
+        wavesBottom: require('../assets/wavesBottom.png'),
+        wavesHor: require('../assets/wavesHor.png'),
         whiteGradient: require('../assets/whiteGradient.png')
     },
     dev: {
