@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "536830929484",
+    "firebase_url": "https://business-6ca8e-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "business-6ca8e",
+    "storage_bucket": "business-6ca8e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:536830929484:android:0b7efc725c61478bf2a2e9",
+        "android_client_info": {
+          "package_name": "com.rental"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "536830929484-hj3guthm4hhulcug5uclpjtjool70avn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOO1f7GLUEGp5EiuLC98MCDvptcd3XgjQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "536830929484-hj3guthm4hhulcug5uclpjtjool70avn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

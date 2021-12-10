@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Text,
   StatusBar
@@ -24,10 +24,30 @@ import HomeFeed from './screens/HomeFeed.jsx';
 import Property from './screens/PropertyNew.jsx';
 import NewListing from './screens/NewListing.jsx';
 
+import firestore from '@react-native-firebase/firestore';
+import auth from '@react-native-firebase/auth';
+import * as Firebase from './Firebase.js';
+
 const App = () => {
+  // Set an initializing state whilst Firebase connects
+  const [ initializing, setInitializing ] = useState(true);
   const [ user, setUser ] = Global.useUser();
-  const [ initializing, setInitializing ] = Global.useInitializing();
   const [ lang, setLang ] = Global.useLang();
+
+  // Handle user state changes
+  function onAuthStateChanged(user) {
+    if(user != null) Firebase.getProperties();
+    setUser(user);
+    Firebase.onUserLogIn();
+    if (initializing) setInitializing(false);
+  }
+
+  useEffect(() => {
+    const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
+    return subscriber; // unsubscribe on unmount
+  }, []);
+  
+  if(initializing) return null;
   
   const Stack = createNativeStackNavigator();
   

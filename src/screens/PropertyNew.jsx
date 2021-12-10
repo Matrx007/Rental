@@ -69,7 +69,7 @@ const InfoComponent = ({route}) => {
                     <Feature __lang={lang} type={"Vannitube"} value={route.params.bathrooms} style={styles.infoLine} />
                 </View>
                 
-                <SimpleButton theme={Styles.Themes.buttonLightTheme} title={lang.property.browsePhotos}/>
+                <SimpleButton theme={Styles.Themes.buttonLightTheme} title={lang.property.browsePhotos} onPress={() => {}}/>
             </View>
         </ScrollView>
     );
@@ -90,17 +90,11 @@ const DescriptionComponent = ({route}) => {
         }
     };
 
-    console.log('===');
-    console.log(route.params);
-    console.log(',,,');
-    console.log(route.params.description);
-    console.log('RENDERED!');
-
     return (
         <ScrollView style={{flex: 1, padding: 24, backgroundColor: '#fff'}}>
             { route.params.description.map((e) => {
                 return (
-                    <View style={{marginBottom: 24}}>
+                    <View style={{marginBottom: 24}} key={e.title}>
                         <Text style={styles.header}>{e.title}</Text>
                         <Text style={styles.content}>{e.text}</Text>
                     </View>
@@ -138,7 +132,6 @@ class Feature extends React.Component {
             rent: '€ / kuus'
         };
 
-        console.log(this.props);
         return (
             <View style={[{marginBottom: 16}, this.props.style]}>
                 <Text style={ styles.header }>{this.props.type}</Text>
@@ -147,10 +140,10 @@ class Feature extends React.Component {
                         Array.isArray(this.props.value.constructor) ? (
                             this.props.value.map(element => {
                                 return (
-                                    <Text style={ styles.content }>
+                                    <Text style={ styles.content } key={element}>
                                         {
                                             this.props.textValue 
-                                                ? (this.props.__lang.featureValues.type.apartment || '-') 
+                                                ? (this.props.__lang.featureValues[element] || '-') 
                                                 : element} {units[this.props.unit]
                                         }
                                     </Text>
