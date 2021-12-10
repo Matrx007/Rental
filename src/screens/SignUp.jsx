@@ -10,6 +10,7 @@ import {
 import { useState } from 'react';
 
 import Styles from '../Styles.jsx';
+import Global from '../Global.jsx';
 
 import SimpleButton from '../components/SimpleButton.jsx';
 
@@ -18,7 +19,8 @@ const SignUp = ({ navigation }) => {
   const [signupPassword, setSignupPassword] = useState('');
   const [signupPasswordConfirm, setSignupPasswordConfirm] = useState('');
   const [signupEmail, setSignupEmail] = useState('');
-  
+  const [lang, setLang] = Global.useLang();
+
   const styles = {
     columnCenterLayout: {
       direction: 'row',
@@ -52,13 +54,13 @@ const SignUp = ({ navigation }) => {
     <View style={[ Styles.Styles.fillScreen, { backgroundColor: '#0000' } ]}>
       
       <View style={ Styles.Styles.oneThirdSection }>
-        <Text style={ Styles.Styles.pageTitle }>Welcome to Rental!</Text>
-        <Text style={ Styles.Styles.pageSubTitle }>Sign up</Text>
+        <Text style={ Styles.Styles.pageTitle }>{lang.signUp.title}</Text>
+        <Text style={ Styles.Styles.pageSubTitle }>{lang.signUp.subtitle}</Text>
       </View>
       
       <View style={[ Styles.Styles.oneThirdSection, {  paddingHorizontal: 32 } ]}>
         <View style={[ Styles.Styles.combinedSection, { marginBottom: 8 } ]}>
-          <Text style={ Styles.Styles.combinedSectionHeader }>E-MAIL</Text>
+          <Text style={ Styles.Styles.combinedSectionHeader }>{lang.signUp.emailField}</Text>
           <TextInput
             placeholder="Aa"
             onChangeText={(signupEmail) => setSignupEmail(signupEmail)}
@@ -69,7 +71,7 @@ const SignUp = ({ navigation }) => {
         </View>
         
         <View style={Styles.Styles.combinedSection}>
-          <Text style={ Styles.Styles.combinedSectionHeader }>PASSWORD</Text>
+          <Text style={ Styles.Styles.combinedSectionHeader }>{lang.signUp.passwordField}</Text>
           <TextInput
             placeholder="Aa"
             secureTextEntry={true}
@@ -80,16 +82,16 @@ const SignUp = ({ navigation }) => {
             />
         </View>
           
-          <SimpleButton title="Log in" onPress={signUp}/>
+          <SimpleButton title={lang.signUp.submit} onPress={signUp}/>
       </View>
       
       <View style={Styles.Styles.oneThirdSection}>
         <View>
           <TouchableOpacity onPress={() => navigation.replace('Log In')}>
-            <Text style={ Styles.Styles.navigationLink }>Already have an account?</Text>
+            <Text style={ Styles.Styles.navigationLink }>{lang.signUp.goToLogin}</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={skipLogIn}>
-            <Text style={ Styles.Styles.navigationLink }>Skip signing up</Text>
+            <Text style={ Styles.Styles.navigationLink }>{lang.signUp.skipLoggingIn}</Text>
           </TouchableOpacity>
         </View>
       </View>

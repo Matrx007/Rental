@@ -13,6 +13,7 @@ export default {
         whiteGradient: require('../assets/whiteGradient.png')
     },
     dev: {
-        testData: require('../assets/testData.json')
+        testData: require('../assets/testData.json'),
+        example: require('../assets/exampleProperty.json')
     }
 };

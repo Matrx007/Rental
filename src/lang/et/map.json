@@ -1,0 +1,129 @@
+{
+    "global": {
+        "appName": "Rental"
+    },
+    "logIn": {
+        "header": "Logi sisse",
+        
+        "title": "Teretulemast tagasi!",
+        "subtitle": "Logi sisse",
+
+        "emailField": "E-MEIL",
+        "passwordField": "PAROOL",
+        "submit": "Logi sisse",
+
+        "forgotPassword": "Unustasite parooli?",
+        "createAccount": "Loo konto",
+        "skipLoggingIn": "Jäta vahele"
+    },
+    "signUp": {
+        "header": "Loo konto",
+        "title": "Tereulemast Rentalisse!",
+        "subtitle": "Loo konto",
+
+        "emailField": "E-MEIL",
+        "passwordField": "PAROOL",
+        "submit": "Loo konto",
+
+        "goToLogin": "Omate juba kontot?",
+        "skipLoggingIn": "Jäta vahele"
+    },
+    "forgotPassword": {
+        "header": "Taasta parool",
+        "title": "Ei pääse sisse?",
+        "subtitle": "Taastage parool",
+
+        "emailField": "E-MAIL",
+        "submit": "Saada e-meil",
+
+        "goToLogin": "Tuli tagasi meelde"
+    },
+    "homeFeed": {
+        "header": "Avaleht",
+        "searchHistory": "Otsinguajalugu",
+        "savedProperties": "Salvestatud",
+        "promoted": "Reklaamitud"
+    },
+    "property": {
+        "header": "Kinnisvara",
+
+        "info": "Andmed",
+        "description": "Tutvustus",
+
+        "browsePhotos": "Sirvi pilte"
+    },
+    "properties": {
+        "header": "Kinnisvarad"
+    },
+    "newListing": {
+        "thisIs": "See on",
+        "forward": "Järgmine",
+        "backward": "Mine tagasi"
+    },
+    "features": {
+        "built": "Ehitatud",
+        "coordinates": "Koordinaadid",
+        "type": "Kinnisvara",
+        "material": "Ehitusmaterjal",
+        "condition": "Seisukord",
+        "address": "Aadress",
+        "description": "Kirjeldus",
+        "title": "Pealkiri",
+        "text": "Tekst",
+        "thumbnail": "Pisipilt",
+        "images": "Pildid",
+        "furnitureIncluded": "Mööbel kaasas",
+        "energyClass": "Energiaklass",
+        "email": "E-meil",
+        "phone": "Telefoninumber",
+        "firstname": "Eesnimi",
+        "lastname": "Perekonnanimi",
+        "rent": "Üür",
+        "conditionalRent": "Üüri tingimused",
+        "amount": "Kogus",
+        "oneTimePayment": "Ühekordne makse",
+        "conditionalOneTimePayment": "Ühekordse makse tingimused",
+        "expenses": "Kulud",
+        "expensesSummer": "Kulud suvel",
+        "expensesWinter": "Kulud talvel",
+        "floor": "Korrus",
+        "floors": "Korruseid",
+        "floorsTotal": "Korruseid hoones",
+        "area": "Pindala",
+        "rooms": "Tube",
+        "bedrooms": "Magamisetube",
+        "bathrooms": "Vannitube",
+        "has": "Omadused"
+    },
+    "featureValues": {
+            "apartment": "Korter",
+            "house": "Maja",
+            "shared": "Jagatud",
+            "wood": "Puidust maja",
+            "log": "Palkmaja",
+            "panel": "Paneelmaja",
+            "modular": "Moodulmaja",
+            "stone": "Kivimaja",
+            "new": "Uus",
+            "renovated": "Renoveeritud",
+            "good": "Hea",
+            "medium": "Keskmine",
+            "poor": "Halb",
+            "balcony": "Rõdu",
+            "balconyClosed": "Suletud rõdu",
+            "terrace": "Terrass",
+            "garage": "Garaaž",
+            "elevator": "Lift",
+            "basement": "Kelder",
+            "storageRoom": "Panipaik",
+            "yard": "Hoov",
+            "attic": "Pööning",
+            "refrigerator": "Külmkapp",
+            "stove": "Pliit"
+    },
+    "units": {
+        "price": "€",
+        "pricePerMonth": "€ / kuu",
+        "area": "m²"
+    }
+}

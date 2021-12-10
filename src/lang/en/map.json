@@ -1,0 +1,129 @@
+{
+    "global": {
+        "appName": "Rental"
+    },
+    "logIn": {
+        "header": "Log in",
+
+        "title": "Welcome Back!",
+        "subtitle": "Log in",
+
+        "emailField": "E-MAIL",
+        "passwordField": "PASSWORD",
+        "submit": "Log in",
+
+        "forgotPassword": "Forgot password?",
+        "createAccount": "Create an account",
+        "skipLoggingIn": "Skip logging in"
+    },
+    "signUp": {
+        "header": "Sign up",
+        "title": "Welcome to Rental!",
+        "subtitle": "Sign up",
+
+        "emailField": "E-MAIL",
+        "passwordField": "PASSWORD",
+        "submit": "Sign up",
+
+        "goToLogin": "Already have an account?",
+        "skipLoggingIn": "Skip logging in"
+    },
+    "forgotPassword": {
+        "header": "Recover password",
+        "title": "Can't log in?",
+        "subtitle": "Recover your password",
+
+        "emailField": "E-MAIL",
+        "submit": "Send e-mail",
+
+        "goToLogin": "Nevermind, figured it out"
+    },
+    "homeFeed": {
+        "header": "Home feed",
+        "searchHistory": "Search history",
+        "savedProperties": "Saved",
+        "promoted": "Promoted"
+    },
+    "property": {
+        "header": "Property",
+
+        "info": "Info",
+        "description": "Description",
+
+        "browsePhotos": "Browse photos"
+    },
+    "properties": {
+        "header": "Properties"
+    },
+    "newListing": {
+        "thisIs": "This is",
+        "forward": "Next",
+        "backward": "Go back"
+    },
+    "features": {
+        "built": "Built",
+        "coordinates": "Coordinates",
+        "type": "Type",
+        "material": "Material",
+        "condition": "Condition",
+        "address": "Address",
+        "description": "Description",
+        "title": "Title",
+        "text": "Text",
+        "thumbnail": "Thumbnail",
+        "images": "Pictures",
+        "furnitureIncluded": "Furniture included",
+        "energyClass": "Energy class",
+        "email": "Email",
+        "phone": "Phone number",
+        "firstname": "Firstname",
+        "lastname": "Lastname",
+        "rent": "Rent",
+        "conditionalRent": "Rent conditions",
+        "amount": "Amount",
+        "oneTimePayment": "One-time payment",
+        "conditionalOneTimePayment": "One-time payment conditions",
+        "expenses": "Expenses",
+        "expensesSummer": "Expenses in summer",
+        "expensesWinter": "Expenses in winter",
+        "floor": "Floor",
+        "floors": "Floors",
+        "floorsTotal": "Floors in building",
+        "area": "Area",
+        "rooms": "Rooms",
+        "bedrooms": "Bedrooms",
+        "bathrooms": "Bathrooms",
+        "has": "Features"
+    },
+    "featureValues": {
+        "apartment": "Apartment",
+        "house": "House",
+        "shared": "Shared",
+        "wood": "Wood house",
+        "log": "Log house",
+        "panel": "Panel house",
+        "modular": "Modular house",
+        "stone": "Stone house",
+        "new": "New",
+        "renovated": "Renovated",
+        "good": "Good",
+        "medium": "Medium",
+        "poor": "Poor",
+        "balcony": "Balcony",
+        "balconyClosed": "Closed balcony",
+        "terrace": "Terrace",
+        "garage": "Garage",
+        "elevator": "Elevator",
+        "basement": "Basement",
+        "storageRoom": "Room storage",
+        "yard": "Yard",
+        "attic": "Attic",
+        "refrigerator": "Refrigerator",
+        "stove": "Stove"
+    },
+    "units": {
+        "price": "€",
+        "pricePerMonth": "€ / month",
+        "area": "m²"
+    }
+}

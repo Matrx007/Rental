@@ -22,11 +22,13 @@ import LogIn from './screens/LogIn.jsx';
 import Properties from './screens/Properties.jsx';
 import SignUp from './screens/SignUp.jsx';
 import HomeFeed from './screens/HomeFeed.jsx';
-import Property from './screens/Property.jsx';
+import Property from './screens/PropertyNew.jsx';
+import NewListing from './screens/NewListing.jsx';
 
 const App = () => {
-  const [user, setUser] = Global.useUser();
+  const [ user, setUser ] = Global.useUser();
   const [ initializing, setInitializing ] = Global.useInitializing();
+  const [ lang, setLang ] = Global.useLang();
   
   const Stack = createNativeStackNavigator();
   
@@ -38,15 +40,17 @@ const App = () => {
         <Stack.Navigator initialRouteName="Sign up">
           { user ? (
             <>
-              <Stack.Screen name="Home Feed" component={HomeFeed} options={{headerShown: false, title: 'Home Feed'}} />
-              <Stack.Screen name="Properties" component={Properties} options={{headerShown: false, title: 'Properties'}} />
-              <Stack.Screen name="Property" component={Property} options={{headerShown: false, title: 'Property'}} />
+              <Stack.Screen name="New Listing" component={NewListing} options={{headerShown: false, title: lang.homeFeed.header}} />
+              <Stack.Screen name="Home Feed" component={HomeFeed} options={{headerShown: false, title: lang.homeFeed.header}} />
+              <Stack.Screen name="Property" component={Property} options={{headerShown: false, title: lang.property.header}} />
+              <Stack.Screen name="Properties" component={Properties} options={{headerShown: false, title: lang.properties.header}} />
+              {/* <Stack.Screen name="Property" component={Property} options={{headerShown: false, title: 'Property'}} /> */}
             </>
           ) : (
             <>
-              <Stack.Screen name="Log In" component={LogIn} options={{headerShown: false, title: 'Log in'}} />
-              <Stack.Screen name="Forgot Password" component={ForgotPassword} options={{headerShown: false, title: 'Recover password'}} />
-              <Stack.Screen name="Sign Up" component={SignUp} options={{headerShown: false, title: 'Sign up'}} />
+              <Stack.Screen name="Log In" component={LogIn} options={{headerShown: false, title: lang.logIn.header}} />
+              <Stack.Screen name="Forgot Password" component={ForgotPassword} options={{headerShown: false, title: lang.forgotPassword.header}} />
+              <Stack.Screen name="Sign Up" component={SignUp} options={{headerShown: false, title: lang.signUp.header}} />
             </>
           ) }
         </Stack.Navigator>

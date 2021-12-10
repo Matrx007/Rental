@@ -13,6 +13,7 @@ import { useState, useRef } from 'react';
 
 import Styles from '../Styles.jsx';
 import References from '../References.jsx';
+import Global from '../Global.jsx';
 
 import Feature from '../components/Feature.jsx';
 
@@ -59,7 +60,8 @@ const searchHistoryStyles = StyleSheet.create({
 // This is a navigator's screen
 export default ({ navigation }) => {
     const [ scrollAmount, setScrollAmount ] = useState(0);
-
+    const [lang, setLang] = Global.useLang();
+    
     const renderProperty = ({ item }) => (
         <View>
             <TouchableOpacity 
@@ -116,12 +118,12 @@ export default ({ navigation }) => {
 
 
 
-                <Text style={[ Styles.Styles.pageTitle, { margin: 32, fontSize: 48, marginBottom: 96, color: 'white', fontWeight: '900' } ]}>Rental</Text>
+                <Text style={[ Styles.Styles.pageTitle, { margin: 32, fontSize: 48, marginBottom: 96, color: 'white', fontWeight: '900' } ]}>{lang.global.appName}</Text>
 
                 <View style={{padding: 16}}>
 
 
-                    <Text style={ Styles.Styles.pageTitle }>Search history</Text>
+                    <Text style={ Styles.Styles.pageTitle }>{lang.homeFeed.searchHistory}</Text>
                     <FlatList
                         showsHorizontalScrollIndicator={false}
                         style={{marginVertical: 16, overflow: 'visible'}}
@@ -134,7 +136,7 @@ export default ({ navigation }) => {
 
 
 
-                    <Text style={ Styles.Styles.pageTitle }>Saved properties</Text>
+                    <Text style={ Styles.Styles.pageTitle }>{lang.homeFeed.savedProperties}</Text>
                     <FlatList
                         showsHorizontalScrollIndicator={false}
                         style={{marginVertical: 16, overflow: 'visible'}}
@@ -147,7 +149,7 @@ export default ({ navigation }) => {
 
 
 
-                    <Text style={ Styles.Styles.pageTitle }>Promoted</Text>
+                    <Text style={ Styles.Styles.pageTitle }>{lang.homeFeed.promoted}</Text>
                     <FlatList
                         showsHorizontalScrollIndicator={false}
                         style={{marginVertical: 16, overflow: 'visible'}}

@@ -19,6 +19,7 @@ const LogIn = ({ navigation }) => {
   const [loginPassword, setLoginPassword] = useState('');
   const [loginEmail, setLoginEmail] = useState('');
   const [user, setUser] = Global.useUser();
+  const [lang, setLang] = Global.useLang();
   
   function logIn() {
     // TODO: firebase.login(callback: navigation.replace(..))
@@ -40,13 +41,13 @@ const LogIn = ({ navigation }) => {
     <View style={[ Styles.Styles.fillScreen, { backgroundColor: '#0000' } ]}>
       
       <View style={ Styles.Styles.oneThirdSection }>
-        <Text style={ Styles.Styles.pageTitle }>Welcome back!</Text>
-        <Text style={ Styles.Styles.pageSubTitle }>Log in</Text>
+        <Text style={ Styles.Styles.pageTitle }>{lang.logIn.title}</Text>
+        <Text style={ Styles.Styles.pageSubTitle }>{lang.logIn.subtitle}</Text>
       </View>
       
       <View style={[ Styles.Styles.oneThirdSection, {  paddingHorizontal: 32 } ]}>
         <View style={[ Styles.Styles.combinedSection, { marginBottom: 8 } ]}>
-          <Text style={ Styles.Styles.combinedSectionHeader }>E-MAIL</Text>
+          <Text style={ Styles.Styles.combinedSectionHeader }>{lang.logIn.emailField}</Text>
           <TextInput
             placeholder="Aa"
             onChangeText={(loginEmail) => setLoginEmail(loginEmail)}
@@ -57,7 +58,7 @@ const LogIn = ({ navigation }) => {
         </View>
         
         <View style={Styles.Styles.combinedSection}>
-          <Text style={ Styles.Styles.combinedSectionHeader }>PASSWORD</Text>
+          <Text style={ Styles.Styles.combinedSectionHeader }>{lang.logIn.passwordField}</Text>
           <TextInput
             placeholder="Aa"
             secureTextEntry={true}
@@ -68,19 +69,19 @@ const LogIn = ({ navigation }) => {
             />
         </View>
           
-          <SimpleButton title="Log in" onPress={logIn}/>
+          <SimpleButton title={lang.logIn.submit} onPress={logIn}/>
       </View>
       
       <View style={Styles.Styles.oneThirdSection}>
         <View>
           <TouchableOpacity onPress={() => navigation.replace('Forgot Password')}>
-            <Text style={ Styles.Styles.navigationLink }>Forgot password?</Text>
+            <Text style={ Styles.Styles.navigationLink }>{lang.logIn.forgotPassword}</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.replace('Sign Up')}>
-            <Text style={ Styles.Styles.navigationLink }>Create an account</Text>
+            <Text style={ Styles.Styles.navigationLink }>{lang.logIn.createAccount}</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={skipLogIn}>
-            <Text style={ Styles.Styles.navigationLink }>Skip logging in</Text>
+            <Text style={ Styles.Styles.navigationLink }>{lang.logIn.skipLoggingIn}</Text>
           </TouchableOpacity>
         </View>
       </View>

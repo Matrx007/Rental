@@ -16,7 +16,7 @@ export default class SimpleButton extends React.Component {
 
   render() { 
     return (
-      <TouchableOpacity style={ Styles.Styles.button } onPress={this.props.onPress}> 
+      <TouchableOpacity style={[ Styles.Styles.button, this.props.style ]} onPress={this.props.onPress}> 
         <Text style={ Styles.Styles.buttonText }>{this.props.title}</Text>
       </TouchableOpacity> 
     );

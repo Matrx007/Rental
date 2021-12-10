@@ -12,7 +12,8 @@ const colors = {
   baseColor: '#fff'
 };
 
-const styles = StyleSheet.create({
+// ed6607
+const styles = {
 
   // Used in components/SimpleButton.jsx
   button: {
@@ -118,6 +119,19 @@ const styles = StyleSheet.create({
     height: 40,
     color: '#000'
   },
+  
+  listingField: {
+    borderWidth: 1.5,
+    borderColor: '#d8d8d8',
+    width: 230,
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    margin: 0,
+    borderRadius: 6,
+    fontSize: 18,
+    fontWeight: '500',
+    color: '#000'
+  },
 
   card: {
     borderRadius: 8,
@@ -133,7 +147,7 @@ const styles = StyleSheet.create({
 
     elevation: 8, */
   }
-});
+};
 
 export default {
   Styles: styles,

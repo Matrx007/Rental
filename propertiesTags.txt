@@ -1,0 +1,40 @@
+DESCRIPTION:
+built: num (year)
+coordinates: number
+type: [apartment, house, shared]
+material: [wood, log, panel, modular, stone]
+condition: new | renovated | good | medium | poor
+address: string
+description: [{ title: string, text: string }]
+furnitureIncluded: bool
+energyClass: A+ | A | ... | H+ | H
+
+CONTACT INFO:
+email: string
+phone: string
+firstname: string
+lastname: string
+
+INFO:
+rent: num
+conditionalRent: [{ amount: num, description: string }]
+oneTimePayment: num
+conditionalOneTimePayment: [{ amount: num, description: string }]
+expenses: num
+expensesSummer: num
+expensesWinter: num
+
+floor: num
+floors: num
+floorsTotal: num
+area: num
+
+PLAN:
+rooms: num
+bedrooms: num
+bathrooms: num
+
+has: balcony, balconyClosed, terrace, garage, elevator, basement, storageRoom, yard, attic
+
+
+included: külmkapp | pliit | 

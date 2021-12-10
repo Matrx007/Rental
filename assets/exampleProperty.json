@@ -1,0 +1,82 @@
+{
+    "built": 2012,
+    "coordinates": [
+        "59.42340",
+        "24.70377"
+    ],
+    "type": "apartment",
+    "material": "stone",
+    "condition": "renovated",
+    "address": "Imedemaa, Kükametsa tn 13",
+    "description": [
+        {
+            "title": "Korterist",
+            "text": "Korter on hiljuti renoveeritud. Moodne interjöör, ilus vaade ning suur rõdu. Paksud seinad tagavad vaikuse naabrite ja tänava müra eest. Korter on ideaalne noorperedele kuna lähedal on kõik vajalik ning tube on palju."
+        },
+        {
+            "title": "Hoonest", 
+            "text": "Hoone ehitamine algas 2016. aastal ning valmis aastaks 2019. Hoones on 14 korterit, 2 iga korruse peale. Hoone on küllaltki uus, ilusa kujundusega ning hoiab kulud madalal. Hoone on ideaalses asukohas, kus on jalutuskauguses toidupood, lasteaed ning kool. Aknast on ilus vaade tulevasele uusarendusele."
+        },
+        {
+            "title": "Korteriühistust", 
+            "text": "Korter on osa Kükametsa korteriühistust. Kükametsa KÜ alustas tegevust 2010 aastal. Korteriühistu ülesanne on Kükametsa tänaval asuvate kortermajade ja nendele kuuluvatele alade üldine majapidamine. Meie eesmärgiks on esindada ka elanike ühiseid huve ning edastada ettepanekuid linnaosale. Kükametsa KÜ-sse kuulub hetkel 3 liiget."
+        }
+    ],
+    "thumbnail": "https://c24ee.img-bcg.eu/object/1_12_3140499786.jpg",
+    "images": [
+      "https://c24ee.img-bcg.eu/object/1_12_3140499786.jpg",
+      "https://c24ee.img-bcg.eu/object/1_12_2909833260.jpg",
+      "https://c24ee.img-bcg.eu/object/1_12_2153986678.jpg",
+      "https://c24ee.img-bcg.eu/object/1_12_1733649685.jpg",
+      "https://c24ee.img-bcg.eu/object/1_12_0426683796.jpg",
+      "https://c24ee.img-bcg.eu/object/1_12_3910806055.jpg",
+      "https://c24ee.img-bcg.eu/object/1_12_4207698892.jpg",
+      "https://c24ee.img-bcg.eu/object/1_12_4256929326.jpg",
+      "https://c24ee.img-bcg.eu/object/1_12_0401784832.jpg",
+      "https://c24ee.img-bcg.eu/object/1_12_1538032347.jpg",
+      "https://c24ee.img-bcg.eu/object/1_12_0843407925.jpg",
+      "https://c24ee.img-bcg.eu/object/1_12_0189309703.jpg",
+      "https://c24ee.img-bcg.eu/object/1_12_3405962766.jpg",
+      "https://c24ee.img-bcg.eu/object/1_12_2276901156.jpg",
+      "https://c24ee.img-bcg.eu/object/1_12_1982264030.jpg",
+      "https://c24ee.img-bcg.eu/object/1_12_3969759755.jpg",
+      "https://c24ee.img-bcg.eu/object/1_12_0544326725.jpg",
+      "https://c24ee.img-bcg.eu/object/1_12_0816852227.jpg",
+      "https://c24ee.img-bcg.eu/object/1_12_2687103851.jpg"
+    ],
+    "furnitureIncluded": true,
+    "energyClass": "A",
+    "email": "john.doe@susmail.com",
+    "phone": "+372 5678 1234",
+    "firstname": "John",
+    "lastname": "Doe",
+    "rent": 1500,
+    "conditionalRent": [
+        {
+            "amount": 1650, 
+            "description": "Koos kuludega"
+        }
+    ],
+    "oneTimePayment": 1500,
+    "conditionalOneTimePayment": [
+        {
+            "amount": 1000, 
+            "description": "Lemmikloomaga"
+        }
+    ],
+    "expenses": 125,
+    "expensesSummer": 100,
+    "expensesWinter": 150,
+    "floor": 1,
+    "floors": 1,
+    "floorsTotal": 7,
+    "area": 127,
+    "rooms": 5,
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "has": [
+        "balcony", 
+        "elevator", 
+        "storageRoom"
+    ]
+}
