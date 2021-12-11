@@ -21,7 +21,7 @@ import LogIn from './screens/LogIn.jsx';
 import Properties from './screens/Properties.jsx';
 import SignUp from './screens/SignUp.jsx';
 import HomeFeed from './screens/HomeFeed.jsx';
-import Property from './screens/PropertyNew.jsx';
+import Property from './screens/Property.jsx';
 import NewListing from './screens/NewListing.jsx';
 import Profile from './screens/Profile.jsx';
 import Loading from './screens/Loading.jsx';

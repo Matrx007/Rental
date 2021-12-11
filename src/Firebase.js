@@ -2,8 +2,8 @@ import firestore from '@react-native-firebase/firestore';
 import auth from '@react-native-firebase/auth';
 import Global from './Global';
 
-const Firestore = firestore();
-const Auth = auth();
+export const Firestore = firestore();
+export const Auth = auth();
 
 
 export function skipLogIn(callback) {

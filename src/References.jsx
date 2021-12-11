@@ -2,6 +2,7 @@ export default {
     features: {
         area: require('../assets/icons/area.png'),
         bedrooms: require('../assets/icons/bed.png'),
+        bathrooms: require('../assets/icons/wc.png'),
         floors: require('../assets/icons/floors.png'),
         price: require('../assets/icons/price.png')
     },

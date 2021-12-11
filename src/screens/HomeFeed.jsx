@@ -139,9 +139,17 @@ export default ({ navigation }) => {
                 <Text style={[ Styles.Styles.pageTitle, { margin: 32, fontSize: 48, marginBottom: 96, color: 'white', fontWeight: '900' } ]}>{lang.global.appName}</Text>
                 {/* <SimpleButton style={{ position: 'absolute', top: 48, right: 32 }} title={"My profile"}/> */}
                 
-                <TouchableOpacity style={{ position: 'absolute', top: 48, right: 32 }} onPress={() => navigation.replace('Profile')}>
-                    <Text style={{ color: '#fff', fontWeight: '700', fontSize: 18 }}>My profile</Text>
-                </TouchableOpacity>
+                {
+                    Firebase.Auth.currentUser.isAnonymous ? (
+                        <TouchableOpacity style={{ position: 'absolute', top: 48, right: 32 }} onPress={() => Firebase.signOut()}>
+                            <Text style={{ color: '#fff', fontWeight: '700', fontSize: 18 }}>Log in</Text>
+                        </TouchableOpacity>
+                    ) : (
+                        <TouchableOpacity style={{ position: 'absolute', top: 48, right: 32 }} onPress={() => navigation.navigate('Profile')}>
+                            <Text style={{ color: '#fff', fontWeight: '700', fontSize: 18 }}>My profile</Text>
+                        </TouchableOpacity>
+                    )
+                }
 
 
                 <View style={{padding: 16}}>
