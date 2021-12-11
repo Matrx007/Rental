@@ -98,7 +98,7 @@ const DescriptionComponent = ({route}) => {
     };
 
     return (
-        <ScrollView style={{flex: 1, padding: 24, backgroundColor: '#fff'}}>
+        <ScrollView style={{flex: 1, backgroundColor: '#fff'}} contentContainerStyle={{padding: 24}}>
             { route.params.description.map((e) => {
                 return (
                     <View style={{marginBottom: 24}} key={e.title}>
@@ -208,36 +208,6 @@ class FeatureBox extends React.Component {
                 </View>
             </TouchableOpacity>
         );
-        {/* <View style={[{marginBottom: 16}, this.props.style]}>
-            <Text style={ styles.header }>{this.props.type}</Text>
-            {
-                this.props.value ? (
-                    Array.isArray(this.props.value.constructor) ? (
-                        this.props.value.map(element => {
-                            return (
-                                <Text style={ styles.content } key={element}>
-                                    {
-                                        this.props.textValue 
-                                            ? (this.props.__lang.featureValues[element] || '-') 
-                                            : element} {units[this.props.unit]
-                                    }
-                                </Text>
-                            );
-                        })
-                    ) : (
-                        <Text style={ styles.content }>
-                            {
-                                this.props.textValue
-                                    ? (this.props.__lang.featureValues[this.props.value] || '-')
-                                    : this.props.value} {units[this.props.unit]
-                            }
-                        </Text>
-                    )
-                ) : (
-                    <Text style={ styles.content }>-</Text>
-                )
-            }
-        </View> */}
     }
 };
 
@@ -245,7 +215,7 @@ const titleBackgroundImage = require('../../assets/waves.png');
 
 // This is a navigator's screen
 // Expected route.params: property data
-export default ({ navigator, route }) => {
+export default ({ navigation, route }) => {
     // route.params = References.dev.example; 
     if(!route.params || !route.params.images || !route.params.images.length) {
         console.error('Property view: route.params is missing images[]');
@@ -285,9 +255,6 @@ export default ({ navigator, route }) => {
 
     const renderPropertyPicture = ({ item }) => {
         return (
-            // <ImageBackground resizeMode={'cover'} imageStyle={{opacity: 0.2}} style={{ backgroundColor: '#000', width: viewWidth, height: viewHeight }} source={{ uri: item.data }}>
-            //     <Image resizeMode={'contain'} style={{ width: viewWidth, height: viewHeight }} source={{ uri: item.data }} />
-            // </ImageBackground>
             <AutoHeightImage 
                 width={Dimensions.get('window').width} source={{uri: item.data}} 
 
@@ -311,15 +278,6 @@ export default ({ navigator, route }) => {
         >
             <Image style={{height: 256}} source={{uri: route.params.images[0]}}/>
             
-            {/* <View>
-                <Image resizeMode="stretch" fadeDuration={0} source={ titleBackgroundImage } style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 160, opacity: 1 }}></Image>
-                
-                <View style={{flex: 1, position: 'absolute', bottom: 24, left: 24}}>
-                    <Text style={[ Styles.Styles.pageTitle, {fontWeight: '400', fontSize: 24, color:'#fff', fontWeight: '900'} ]}>{route.params.address}</Text>
-                    <Text style={[ Styles.Styles.pageTitle, {fontSize: 18, fontWeight: '700', color:'#fff'} ]}>{route.params.rent} {lang.units.pricePerMonth}</Text>
-                </View>
-            </View> */}
-            
             <ScrollView style={{position: 'absolute', left: 0, top: 0, right: 0, bottom: 0, flex: 1, backgroundColor: '#fff0'}}>
 
                 <View style={{marginTop: 256, padding: 24, backgroundColor: '#fff'}}> 
@@ -335,7 +293,7 @@ export default ({ navigator, route }) => {
                         <Text style={{color: '#000', marginTop: 12}}>
                             Tempor sunt dolore est sunt ex in ex amet occaecat in commodo dolore. Reprehenderit consequat culpa cupidatat veniam esse sit occaecat mollit nostrud enim qui. Duis irure veniam dolor nisi nulla. Nulla ex quis tempor consectetur ullamco.
                         </Text>
-                        <Link style={{fontSize: 14}} title="Read more"/>
+                        <Link style={{fontSize: 14}} title={lang.property.readMore} onPress={() => navigation.navigate('Property Description', route.params.description)}/>
                     </View>
                 
                     <View style={[styles.infoSection]}>
@@ -352,7 +310,12 @@ export default ({ navigator, route }) => {
                         <Feature __lang={lang} type={"Vannitube"} value={route.params.bathrooms} style={styles.infoLine} />
                     </View>
                     
-                    <SimpleButton theme={Styles.Themes.buttonLightTheme} title={lang.property.browsePhotos} onPress={() => {}}/>
+                    <SimpleButton 
+                        theme={Styles.Themes.buttonLightTheme} 
+                        title={lang.property.browsePhotos} 
+                        onPress={() => 
+                            navigation.navigate('Property Gallery', route.params.images.map(image => {return {url: image}}))
+                        }/>
                 </View>
             </ScrollView>
             

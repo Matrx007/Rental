@@ -25,13 +25,12 @@ const LogIn = ({ navigation }) => {
   const [loading, setLoading] = Global.useLoading();
   
   function logIn() {
-    // TODO: firebase.login(callback: navigation.replace(..))
-    navigation.replace('Properties');
+    setLoading(true);
+    Firebase.logIn(loginEmail, loginPassword, () => setLoading(false));
   }
   
   function skipLogIn() {
-    // TODO: firebase.asAnonymous(callback: navigation.replace(..))
-    setLoading(true);  
+    setLoading(true);
     Firebase.skipLogIn(() => setLoading(false));
   }
   

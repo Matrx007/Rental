@@ -45,15 +45,17 @@
         "promoted": "Promoted"
     },
     "property": {
-        "header": "Property",
+        "header": "Listing",
 
         "info": "Info",
         "description": "Description",
 
-        "browsePhotos": "Browse photos"
+        "browsePhotos": "Browse photos",
+        "gallery": "Gallery",
+        "readMore": "Read more"
     },
     "properties": {
-        "header": "Properties"
+        "header": "Listings"
     },
     "newListing": {
         "thisIs": "This is",

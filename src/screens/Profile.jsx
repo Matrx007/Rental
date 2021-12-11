@@ -25,7 +25,8 @@ const Profile = ({ navigation }) => {
   }
   
   return (
-    <View style={[ Styles.Styles.fillScreen, { padding: 32, backgroundColor: '#0000' } ]}>
+    <View style={[ Styles.Styles.fillScreen, { padding: 32, backgroundColor: '#fff' } ]}>
+      <Text style={{color: '#000', fontWeight: '500', fontSize: 18, marginBottom: 24}}>E-mail: {Firebase.Auth.currentUser?.email}</Text>
       <SimpleButton title={"Sign out"} onPress={signOut}/>
     </View>
   );

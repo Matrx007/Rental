@@ -13,6 +13,7 @@ import Styles from '../Styles.jsx';
 import Global from '../Global.jsx';
 
 import SimpleButton from '../components/SimpleButton.jsx';
+import * as Firebase from '../Firebase.js';
 
 // This is a navigator's screen
 const SignUp = ({ navigation }) => {
@@ -20,6 +21,7 @@ const SignUp = ({ navigation }) => {
   const [signupPasswordConfirm, setSignupPasswordConfirm] = useState('');
   const [signupEmail, setSignupEmail] = useState('');
   const [lang, setLang] = Global.useLang();
+  const [loading, setLoading] = Global.useLoading();
 
   const styles = {
     columnCenterLayout: {
@@ -42,12 +44,13 @@ const SignUp = ({ navigation }) => {
   };
   
   function signUp() {
-    // TODO: firebase.signup(callback: navigation.replace(..))
-    navigation.replace('Properties');
+    setLoading(true);
+    Firebase.signUp(signupEmail, signupPassword, () => setLoading(false));
   }
 
   function skipLogIn() {
-
+    setLoading(true);
+    Firebase.skipLogIn(() => setLoading(false));
   }
 
   return (

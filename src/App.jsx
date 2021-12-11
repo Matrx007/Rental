@@ -29,6 +29,8 @@ import Loading from './screens/Loading.jsx';
 import firestore from '@react-native-firebase/firestore';
 import auth from '@react-native-firebase/auth';
 import * as Firebase from './Firebase.js';
+import Description from './screens/property/Description.jsx';
+import Gallery from './screens/property/Gallery.jsx';
 
 const App = () => {
   // Set an initializing state whilst Firebase connects
@@ -63,10 +65,12 @@ const App = () => {
           { user ? (
             <> 
               <Stack.Screen name="Home Feed" component={HomeFeed} options={{headerShown: false, title: lang.homeFeed.header}} />
-              <Stack.Screen name="Property" component={Property} options={{headerShown: false, title: lang.property.header}} />
+              <Stack.Screen name="Property" component={Property} options={{headerShown: true, title: lang.property.header}} />
               <Stack.Screen name="Properties" component={Properties} options={{headerShown: false, title: lang.properties.header}} />
               <Stack.Screen name="New Listing" component={NewListing} options={{headerShown: false, title: lang.homeFeed.header}} />
               <Stack.Screen name="Profile" component={Profile} options={{headerShown: false, title: 'Profile'}} />
+              <Stack.Screen name="Property Description" component={Description} options={{headerShown: true, title: lang.property.description}} />
+              <Stack.Screen name="Property Gallery" component={Gallery} options={{headerShown: true, headerTransparent: true, headerShadowVisible: false, title: lang.property.gallery}} />
               {/* <Stack.Screen name="Property" component={Property} options={{headerShown: false, title: 'Property'}} /> */}
             </>
           ) : (

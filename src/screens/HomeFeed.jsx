@@ -84,7 +84,7 @@ export default ({ navigation }) => {
         <View>
             <TouchableOpacity 
                 style={[ Styles.Styles.card, { overflow: 'visible', marginHorizontal: 8, maxWidth: 256, height: 'auto' } ]}
-                onPress={() => navigation.push('Property', item.data)}>
+                onPress={() => navigation.navigate('Property', item.data)}>
                 <Image source={{uri: item.data.images[0]}} style={{width: '100%', height: 80, borderRadius: Styles.Styles.card.borderRadius}}/>
                 <View style={{padding: 10, height: 'auto'}}>
                     <Text style={[ Styles.Styles.pageSubTitle, {height: 'auto', fontSize: 18, fontWeight: '900'} ]}>{item.data.rent} € / month</Text>
@@ -140,7 +140,7 @@ export default ({ navigation }) => {
                 {/* <SimpleButton style={{ position: 'absolute', top: 48, right: 32 }} title={"My profile"}/> */}
                 
                 {
-                    Firebase.Auth.currentUser.isAnonymous ? (
+                    Firebase.Auth.currentUser?.isAnonymous ? (
                         <TouchableOpacity style={{ position: 'absolute', top: 48, right: 32 }} onPress={() => Firebase.signOut()}>
                             <Text style={{ color: '#fff', fontWeight: '700', fontSize: 18 }}>Log in</Text>
                         </TouchableOpacity>

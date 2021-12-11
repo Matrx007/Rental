@@ -45,15 +45,17 @@
         "promoted": "Reklaamitud"
     },
     "property": {
-        "header": "Kinnisvara",
+        "header": "Kuulutus",
 
         "info": "Andmed",
-        "description": "Tutvustus",
+        "description": "Kirjeldus",
 
-        "browsePhotos": "Sirvi pilte"
+        "browsePhotos": "Sirvi pilte",
+        "gallery": "Galerii",
+        "readMore": "Kuva rohkem"
     },
     "properties": {
-        "header": "Kinnisvarad"
+        "header": "Kuulutused"
     },
     "newListing": {
         "thisIs": "See on",

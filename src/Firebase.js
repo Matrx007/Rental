@@ -5,6 +5,25 @@ import Global from './Global';
 export const Firestore = firestore();
 export const Auth = auth();
 
+export function signUp(email, password, callback) {
+    
+    Auth
+    .createUserWithEmailAndPassword(email, password)
+    .then(callback)
+    .catch(error => {
+        console.error(error);
+    });
+}
+
+export function logIn(email, password, callback) {
+    
+    Auth
+    .signInWithEmailAndPassword(email, password)
+    .then(callback)
+    .catch(error => {
+        console.error(error);
+    });
+}
 
 export function skipLogIn(callback) {
     
