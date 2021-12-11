@@ -54,8 +54,6 @@ const App = () => {
   
   const Stack = createNativeStackNavigator();
   
-  console.log('App(): ', user);
-  
   if(loading) return Loading();
   
   return (

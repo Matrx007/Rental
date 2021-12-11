@@ -17,7 +17,7 @@ import Global from '../Global.jsx';
 
 import Feature from '../components/Feature.jsx';
 import SimpleButton from '../components/SimpleButton.jsx';
-
+import * as Firebase from '../Firebase.js';
 
 
 const savedProperties = References.dev.testData.slice(0, 50).map((item, index) => {
@@ -62,16 +62,33 @@ const searchHistoryStyles = StyleSheet.create({
 export default ({ navigation }) => {
     const [ scrollAmount, setScrollAmount ] = useState(0);
     const [lang, setLang] = Global.useLang();
+    const [properties, setProperties] = Global.useProperties();
+    
+    if(properties == null) {
+        Firebase.getRandomProperties((docs) => {
+            let properties = [];
+            docs.forEach((doc) => {
+                // properties[doc.id] = doc.data();
+                let data = doc.data();
+                
+                data.lessor = data.lessor.path;
+                
+                properties.push({id: doc.id, data: data});
+            });
+            setProperties(properties);
+            console.log(properties);
+        });
+    }
     
     const renderProperty = ({ item }) => (
         <View>
             <TouchableOpacity 
                 style={[ Styles.Styles.card, { overflow: 'visible', marginHorizontal: 8, maxWidth: 256, height: 'auto' } ]}
                 onPress={() => navigation.push('Property', item.data)}>
-                <Image source={{uri: item.data.image}} style={{width: '100%', height: 80, borderRadius: Styles.Styles.card.borderRadius}}/>
+                <Image source={{uri: item.data.images[0]}} style={{width: '100%', height: 80, borderRadius: Styles.Styles.card.borderRadius}}/>
                 <View style={{padding: 10, height: 'auto'}}>
                     <Text style={[ Styles.Styles.pageSubTitle, {height: 'auto', fontSize: 18, fontWeight: '900'} ]}>{item.data.rent} € / month</Text>
-                    <Text style={[ Styles.Styles.pageSubTitle, {height: 'auto', fontSize: 18, fontWeight: '400', color: '#888'} ]}>{item.data.title}</Text>
+                    <Text style={[ Styles.Styles.pageSubTitle, {height: 'auto', fontSize: 18, fontWeight: '400', color: '#888'} ]}>{item.data.address}</Text>
                 </View>
             </TouchableOpacity>
         </View>
@@ -163,7 +180,7 @@ export default ({ navigation }) => {
                         style={{marginVertical: 16, overflow: 'visible'}}
                         horizontal
 
-                        data={promotedProperties}
+                        data={properties}
                         keyExtractor={item => item.id}
                         renderItem={renderProperty}
                     />

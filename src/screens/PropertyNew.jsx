@@ -172,7 +172,7 @@ const titleBackgroundImage = require('../../assets/waves.png');
 // This is a navigator's screen
 // Expected route.params: property data
 export default ({ navigator, route }) => {
-    route.params = References.dev.example;
+    // route.params = References.dev.example; 
     if(!route.params || !route.params.images || !route.params.images.length) {
         console.error('Property view: route.params is missing images[]');
         return null;

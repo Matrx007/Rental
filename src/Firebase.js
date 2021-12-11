@@ -16,6 +16,12 @@ export function skipLogIn(callback) {
     });
 }
 
+export function getRandomProperties(callback) {
+    Firestore.collection('properties').limit(5).get().then(querySnapshot => {
+        callback(querySnapshot.docs);
+    });
+}
+
 export function onUserLogIn() {
     console.log("auth state changed!!!!");
 }
