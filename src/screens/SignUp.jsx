@@ -20,6 +20,8 @@ const SignUp = ({ navigation }) => {
   const [signupPassword, setSignupPassword] = useState('');
   const [signupPasswordConfirm, setSignupPasswordConfirm] = useState('');
   const [signupEmail, setSignupEmail] = useState('');
+  const [signupFirstname, setSignupFirstname] = useState('');
+  const [signupLastname, setSignupLastname] = useState('');
   const [lang, setLang] = Global.useLang();
   const [loading, setLoading] = Global.useLoading();
 
@@ -45,7 +47,7 @@ const SignUp = ({ navigation }) => {
   
   function signUp() {
     setLoading(true);
-    Firebase.signUp(signupEmail, signupPassword, () => setLoading(false));
+    Firebase.signUp(signupEmail, signupPassword, signupFirstname, signupLastname, () => setLoading(false));
   }
 
   function skipLogIn() {
@@ -80,6 +82,28 @@ const SignUp = ({ navigation }) => {
             secureTextEntry={true}
             onChangeText={(signupPassword) => setSignupPassword(signupPassword)}
             value={signupPassword}
+            style={Styles.Styles.inputBox}
+            placeholderTextColor='#0008'
+            />
+        </View>
+        
+        <View style={Styles.Styles.combinedSection}>
+          <Text style={ Styles.Styles.combinedSectionHeader }>{lang.signUp.firstnameField}</Text>
+          <TextInput
+            placeholder="Aa"
+            onChangeText={(signupFirstname) => setSignupFirstname(signupFirstname)}
+            value={signupFirstname}
+            style={Styles.Styles.inputBox}
+            placeholderTextColor='#0008'
+            />
+        </View>
+        
+        <View style={Styles.Styles.combinedSection}>
+          <Text style={ Styles.Styles.combinedSectionHeader }>{lang.signUp.lastnameField}</Text>
+          <TextInput
+            placeholder="Aa"
+            onChangeText={(signupLastname) => setSignupLastname(signupLastname)}
+            value={signupLastname}
             style={Styles.Styles.inputBox}
             placeholderTextColor='#0008'
             />

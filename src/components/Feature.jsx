@@ -35,27 +35,10 @@ export default class Feature extends React.Component {
             }
         };
 
-        const types = {
-            area: {
-                icon: References.features.area,
-                unit: 'm²'
-            },
-            price: {
-                icon: References.features.price,
-                unit: '€'
-            },
-            bedrooms: {
-                icon: References.features.bedrooms,
-                unit: ''
-            }
-        };
-
-        const type = types[this.props.type];
-
         return (
             <View style={[ styles.featuresRow ]}>
-                <Image style={styles.featuresIcon} source={type.icon}/>
-                <Text style={styles.featuresText}>{this.props.value} {type.unit}</Text>
+                <Image style={styles.featuresIcon} source={References.features[this.props.type]}/>
+                <Text style={styles.featuresText}>{this.props.value} {this.props.lang.units[this.props.type]}</Text>
             </View>
         );
     }

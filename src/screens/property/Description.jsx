@@ -13,12 +13,6 @@ import * as Firebase from '../../Firebase.js';
 // This is a navigators's screen
 // Expected route.params: property descriptions
 const Description = ({ navigator, route }) => {
-    const [loading, setLoading] = Global.useLoading();
-    
-    function signOut() {
-        setLoading(true);  
-        Firebase.signOut(() => setLoading(false));
-    }
     
     const styles = {
         header: {

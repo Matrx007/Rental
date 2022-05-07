@@ -5,7 +5,7 @@ import {
   Image,
   FlatList
 } from 'react-native';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import Styles from '../../Styles.jsx';
 import Global from '../../Global.jsx';
@@ -16,13 +16,11 @@ import ImageViewer from 'react-native-image-zoom-viewer';
 // Expected route.params: property images
 const Gallery = ({ navigation, route }) => {
     const [viewHeight, setViewHeight] = useState(0);
-    const [initialized, setInitialized] = useState(false);
     const [lang, setLang] = Global.useLang();
-    
-    if(!initialized) {
+
+    useEffect(() => {
         navigation.setOptions({title: `${lang.property.gallery} 1/${route.params.length}`});
-        setInitialized(true);
-    }
+    }, []);
     
     function signOut() {
         setLoading(true);  

@@ -2,6 +2,13 @@
     "global": {
         "appName": "Rental"
     },
+    "profile": {
+        "header": "Minu konto",
+        "greeting": "Tere",
+        "logOut": "Logi välja",
+        "myProperties": "Minu kuulutused",
+        "newListing": "Uus kuulutus"
+    },
     "logIn": {
         "header": "Logi sisse",
         
@@ -23,6 +30,8 @@
 
         "emailField": "E-MEIL",
         "passwordField": "PAROOL",
+        "firstnameField": "EESNIMI",
+        "lastnameField": "PEREKONNANIMI",
         "submit": "Loo konto",
 
         "goToLogin": "Omate juba kontot?",
@@ -42,7 +51,22 @@
         "header": "Avaleht",
         "searchHistory": "Otsinguajalugu",
         "savedProperties": "Salvestatud",
-        "promoted": "Reklaamitud"
+        "promoted": "Reklaamitud",
+        "logIn": "Sisene",
+        "myProfile": "Minu profiil",
+        "search": "Otsi",
+        "startSearch": "Uus otsing"
+    },
+    "search": {
+        "header": "Otsing",
+        "filters": "Filtrid",
+        "quickFilters": "Kiirvalikud",
+        "search": "Otsi"
+    },
+    "searchResults": {
+        "header": "Tulemused",
+        "noResults": "Tulemusi ei leitud",
+        "loading": "Otsimine"
     },
     "property": {
         "header": "Kuulutus",
@@ -52,15 +76,19 @@
 
         "browsePhotos": "Sirvi pilte",
         "gallery": "Galerii",
-        "readMore": "Kuva rohkem"
+        "readMore": "Kuva rohkem",
+        "contactInfo": "Kontaktandmed"
     },
     "properties": {
         "header": "Kuulutused"
     },
     "newListing": {
+        "header": "Uus kuulutus",
         "thisIs": "See on",
         "forward": "Järgmine",
-        "backward": "Mine tagasi"
+        "backward": "Eelmine",
+        "continue": "Jätka",
+        "missingFeatures": "Mõned väljad on tühjad"
     },
     "features": {
         "built": "Ehitatud",
@@ -74,7 +102,7 @@
         "text": "Tekst",
         "thumbnail": "Pisipilt",
         "images": "Pildid",
-        "furnitureIncluded": "Mööbel kaasas",
+        "included": "Mööbel kaasas",
         "energyClass": "Energiaklass",
         "email": "E-meil",
         "phone": "Telefoninumber",
@@ -89,43 +117,46 @@
         "expensesSummer": "Kulud suvel",
         "expensesWinter": "Kulud talvel",
         "floor": "Korrus",
-        "floors": "Korruseid",
+        "floors": "Korruseid kinnisvaras",
         "floorsTotal": "Korruseid hoones",
         "area": "Pindala",
         "rooms": "Tube",
-        "bedrooms": "Magamisetube",
-        "bathrooms": "Vannitube",
+        "bedrooms": "Magamistube",
+        "bathrooms": "Vannitube [FIX]",
+        "wcs": "WC-sid",
         "has": "Omadused"
     },
     "featureValues": {
-            "apartment": "Korter",
-            "house": "Maja",
-            "shared": "Maja osa",
-            "wood": "Puidust maja",
-            "log": "Palkmaja",
-            "panel": "Paneelmaja",
-            "modular": "Moodulmaja",
-            "stone": "Kivimaja",
-            "new": "Uus",
-            "renovated": "Renoveeritud",
-            "good": "Hea",
-            "medium": "Keskmine",
-            "poor": "Halb",
-            "balcony": "Rõdu",
-            "balconyClosed": "Suletud rõdu",
-            "terrace": "Terrass",
-            "garage": "Garaaž",
-            "elevator": "Lift",
-            "basement": "Kelder",
-            "storageRoom": "Panipaik",
-            "yard": "Hoov",
-            "attic": "Pööning",
-            "refrigerator": "Külmkapp",
-            "stove": "Pliit"
+        "apartment": "Korter",
+        "house": "Maja",
+        "shared": "Maja osa",
+        "wood": "Puidust maja",
+        "log": "Palkmaja",
+        "panel": "Paneelmaja",
+        "modular": "Moodulmaja",
+        "stone": "Kivimaja",
+        "new": "Uus",
+        "renovated": "Renoveeritud",
+        "good": "Hea",
+        "medium": "Keskmine",
+        "poor": "Halb",
+        "balcony": "Rõdu",
+        "balconyClosed": "Suletud rõdu",
+        "terrace": "Terrass",
+        "garage": "Garaaž",
+        "elevator": "Lift",
+        "basement": "Kelder",
+        "storageRoom": "Panipaik",
+        "yard": "Hoov",
+        "attic": "Pööning",
+        "refrigerator": "Külmkapp",
+        "stove": "Pliit",
+        "all": "Kõik"
     },
     "units": {
         "price": "€",
         "pricePerMonth": "€ / kuu",
+        "rent": "€ / kuu",
         "area": "m²"
     }
 }

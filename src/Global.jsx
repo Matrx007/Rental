@@ -4,7 +4,7 @@ import GlobalStore from 'react-native-global-state-hooks';
 
 // user
 const userStore = new GlobalStore(null);
-// export const useUser = userStore.getHook();
+const userDataStore = new GlobalStore(null);
 
 // initializing
 const initializingStore = new GlobalStore(true);
@@ -29,6 +29,7 @@ export default {
     
     // Firebase authentication
     useUser: userStore.getHook(),
+    useUserData: userDataStore.getHook(),
     useInitializing: initializingStore.getHook(),
     useLoading: loadingStore.getHook(),
     

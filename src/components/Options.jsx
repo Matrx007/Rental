@@ -4,7 +4,9 @@ import {
   Text,
   View,
   FlatList,
-  TouchableOpacity
+  ScrollView,
+  TouchableOpacity,
+  Dimensions
 } from 'react-native';
 
 import PropTypes from 'prop-types';
@@ -34,7 +36,8 @@ export default class Options extends React.Component {
                 borderWidth: 2,
                 borderColor: '#d8d8d8',
                 borderRadius: 6,
-                overflow: 'hidden',
+                flexGrow: 0,
+                // overflow: 'hidden',
                 width: this.props.width,
                 height: this.props.height*this.props.options.length
             }
@@ -63,7 +66,8 @@ export default class Options extends React.Component {
             };
 
             const select = () => {
-                this.setState({selectedID: option.id})
+                this.setState({selectedID: option.id});
+                this.props.onSelectedChange(option.id);
             };
 
             return (
@@ -74,10 +78,12 @@ export default class Options extends React.Component {
         };
 
         return (
-            <View style={styles.outer}>
-                {
-                    this.props.options.map(option => renderOption(option))
-                }
+            <View style={this.props.maxHeight ? { maxHeight: this.props.maxHeight } : undefined}>
+                <ScrollView style={styles.outer}>
+                    {
+                        this.props.options.map(option => renderOption(option))
+                    }
+                </ScrollView>
             </View>
         );
     }

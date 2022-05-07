@@ -62,6 +62,24 @@ const themes = {
       // color: '#fff'
       color: '#9900ef',
     } 
+  },
+  buttonLinkTheme: {
+    // Used in components/SimpleButton.jsx
+    box: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingVertical: 12,
+      paddingHorizontal: 24,
+      backgroundColor: 'transparent',
+    },
+    
+    // Used in components/SimpleButton.jsx
+    text: {
+      fontSize: 16,
+      fontWeight: '500',
+      letterSpacing: 1.25,
+      color: '#9900ef',
+    } 
   }
 };
 

@@ -136,6 +136,7 @@ android {
         applicationId "com.rental"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
+        missingDimensionStrategy 'react-native-camera', 'general'
         versionCode 1
         versionName "1.0"
     }
@@ -153,6 +154,12 @@ android {
             storePassword 'android'
             keyAlias 'androiddebugkey'
             keyPassword 'android'
+        }
+        release {
+            storeFile file('rendify.keystore')
+            storePassword '69420666'
+            keyAlias 'my-app-alias'
+            keyPassword '69420666'
         }
     }
     buildTypes {

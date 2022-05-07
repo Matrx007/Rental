@@ -2,6 +2,13 @@
     "global": {
         "appName": "Rental"
     },
+    "profile": {
+        "header": "My profile",
+        "greeting": "Hello",
+        "logOut": "Log out",
+        "myProperties": "My listings",
+        "newListing": "New listing"
+    },
     "logIn": {
         "header": "Log in",
 
@@ -23,6 +30,8 @@
 
         "emailField": "E-MAIL",
         "passwordField": "PASSWORD",
+        "firstnameField": "FIRSTNAME",
+        "lastnameField": "LASTNAME",
         "submit": "Sign up",
 
         "goToLogin": "Already have an account?",
@@ -42,7 +51,22 @@
         "header": "Home feed",
         "searchHistory": "Search history",
         "savedProperties": "Saved",
-        "promoted": "Promoted"
+        "promoted": "Promoted",
+        "logIn": "Log in",
+        "myProfile": "My profile",
+        "search": "Search",
+        "startSearch": "New search"
+    },
+    "search": {
+        "header": "Search",
+        "filters": "Filters",
+        "quickFilters": "Quick filters",
+        "search": "Search"
+    },
+    "searchResults": {
+        "header": "Results",
+        "noResults": "No results",
+        "loading": "Searching"
     },
     "property": {
         "header": "Listing",
@@ -52,15 +76,19 @@
 
         "browsePhotos": "Browse photos",
         "gallery": "Gallery",
-        "readMore": "Read more"
+        "readMore": "Read more",
+        "contactInfo": "Contact info"
     },
     "properties": {
         "header": "Listings"
     },
     "newListing": {
+        "header": "New listing",
         "thisIs": "This is",
         "forward": "Next",
-        "backward": "Go back"
+        "backward": "Previous",
+        "continue": "Continue",
+        "missingFeatures": "Some fields are empty"
     },
     "features": {
         "built": "Built",
@@ -74,7 +102,7 @@
         "text": "Text",
         "thumbnail": "Thumbnail",
         "images": "Pictures",
-        "furnitureIncluded": "Furniture included",
+        "included": "Furniture included",
         "energyClass": "Energy class",
         "email": "Email",
         "phone": "Phone number",
@@ -89,12 +117,13 @@
         "expensesSummer": "Expenses in summer",
         "expensesWinter": "Expenses in winter",
         "floor": "Floor",
-        "floors": "Floors",
+        "floors": "Floors in property",
         "floorsTotal": "Floors in building",
         "area": "Area",
         "rooms": "Rooms",
         "bedrooms": "Bedrooms",
-        "bathrooms": "Bathrooms",
+        "bathrooms": "Bathrooms [FIX]",
+        "wcs": "WCs",
         "has": "Features"
     },
     "featureValues": {
@@ -121,11 +150,13 @@
         "yard": "Yard",
         "attic": "Attic",
         "refrigerator": "Refrigerator",
-        "stove": "Stove"
+        "stove": "Stove",
+        "all": "All"
     },
     "units": {
         "price": "€",
         "pricePerMonth": "€ / month",
+        "rent": "€ / month",
         "area": "m²"
     }
 }

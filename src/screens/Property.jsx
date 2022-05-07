@@ -71,7 +71,7 @@ const InfoComponent = ({route}) => {
                             <Feature __lang={lang} type={"Pindala"} unit={"area"} value={route.params.area} style={styles.infoLine} />
                             <Feature __lang={lang} type={"Tube"} value={route.params.rooms} style={styles.infoLine} />
                             <Feature __lang={lang} type={"Magamistube"} value={route.params.bedrooms} style={styles.infoLine} />
-                            <Feature __lang={lang} type={"Vannitube"} value={route.params.bathrooms} style={styles.infoLine} />
+                            <Feature __lang={lang} type={"Vannitube"} value={route.params.wcs} style={styles.infoLine} />
                         </View>
                         
                         <SimpleButton theme={Styles.Themes.buttonLightTheme} title={lang.property.browsePhotos} onPress={() => {}}/>
@@ -216,7 +216,7 @@ const titleBackgroundImage = require('../../assets/waves.png');
 // This is a navigator's screen
 // Expected route.params: property data
 export default ({ navigation, route }) => {
-    // route.params = References.dev.example; 
+    
     if(!route.params || !route.params.images || !route.params.images.length) {
         console.error('Property view: route.params is missing images[]');
         return null;
@@ -267,6 +267,7 @@ export default ({ navigation, route }) => {
 
     const Tab = createMaterialTopTabNavigator();
     
+    console.log('route.params:', route.params);
 
     return (
         <View style={[Styles.Styles.fillScreen, {flex: 1, backgroundColor: 'white'}]}
@@ -287,11 +288,11 @@ export default ({ navigation, route }) => {
                         <View style={{flexDirection: 'row', marginTop: 12}}>
                             <FeatureBox style={{marginRight: 8}} type={"area"} value={route.params.area}/>
                             <FeatureBox style={{marginRight: 8}} type={"bedrooms"} value={route.params.bedrooms}/>
-                            <FeatureBox style={{marginRight: 8}} type={"bathrooms"} value={route.params.bathrooms}/>
+                            <FeatureBox style={{marginRight: 8}} type={"wcs"} value={route.params.wcs}/>
                             <FeatureBox style={{marginRight: 8}} type={"floors"} value={route.params.floor}/>
                         </View>
                         <Text style={{color: '#000', marginTop: 12}}>
-                            Tempor sunt dolore est sunt ex in ex amet occaecat in commodo dolore. Reprehenderit consequat culpa cupidatat veniam esse sit occaecat mollit nostrud enim qui. Duis irure veniam dolor nisi nulla. Nulla ex quis tempor consectetur ullamco.
+                            {Object.values(route.params.description)[0].text.substring(0, 300) + '...'}
                         </Text>
                         <Link style={{fontSize: 14}} title={lang.property.readMore} onPress={() => navigation.navigate('Property Description', route.params.description)}/>
                     </View>
@@ -307,7 +308,18 @@ export default ({ navigation, route }) => {
                         <Feature __lang={lang} type={"Pindala"} unit={"area"} value={route.params.area} style={styles.infoLine} />
                         <Feature __lang={lang} type={"Tube"} value={route.params.rooms} style={styles.infoLine} />
                         <Feature __lang={lang} type={"Magamistube"} value={route.params.bedrooms} style={styles.infoLine} />
-                        <Feature __lang={lang} type={"Vannitube"} value={route.params.bathrooms} style={styles.infoLine} />
+                        <Feature __lang={lang} type={"Vannitube"} value={route.params.wcs} style={styles.infoLine} />
+                    </View>
+                    
+                    <View style={styles.infoSection}>
+                        <Text style={[ Styles.Styles.pageTitle, {fontWeight: '400', fontSize: 24, color:'#000', fontWeight: '900'} ]}>{lang.property.contactInfo}</Text>
+                        <Text style={[ Styles.Styles.pageTitle, {fontSize: 18, fontWeight: '700', color:'#000'} ]}>{route.params.lessor.firstname} {route.params.lessor.lastname}</Text>
+                        { route.params.contact ? (
+                            <>
+                                <Text style={[ Styles.Styles.pageTitle, {fontSize: 18, fontWeight: '500', color:'#888'} ]}>{route.params.contact.email}</Text>
+                                <Text style={[ Styles.Styles.pageTitle, {fontSize: 18, fontWeight: '500', color:'#888'} ]}>{route.params.contact.phone}</Text>
+                            </>
+                        ) : null }
                     </View>
                     
                     <SimpleButton 
